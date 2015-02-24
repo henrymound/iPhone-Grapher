@@ -5,9 +5,9 @@ iPhone Grapher will be an App that allows people to create Pie, Bar, Line, Geo, 
 https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/doughnut.html<p>
 https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/bar.html<p>
 https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/pie.html<p>
-https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/pie-customTooltips<p>
-https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/polar-area<p>
-https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/radar<p>
+https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/pie-customTooltips.html<p>
+https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/polar-area.html<p>
+https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/radar.html<p>
 https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/line-customTooltips.html<p>
 https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/line.html<p>
 
