@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-        <script src="lib/sweet-alert.min.js"></script>
+    <script src="lib/sweet-alert.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.leanModal.min.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
     <style type="text/css">
     
@@ -104,7 +106,16 @@
     width: 100%;
     }
         
-        
+    #lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
     </style>
     
 
@@ -112,59 +123,154 @@
     <body bgcolor="#333" >
     <table width="320px" height="640px"><tr><td>
         
+ 
 
 
+    <script>
 
-
-    <center>
-        <div class="card">    
-            <!--<font color="#333" size="5px"><b>Sample Pie Chart</b></font><br /><br />-->
-            <center>
-                <table width="350px" height="350px" border = "0px">
-                    <tr>
-                        <td>
-                            
-                            <center><iframe 
-                                src="pie.html"
-                                frameborder="0"
-                                width="350px"
-                                height="350px"
-                                scrolling="no" 
-                                ></iframe></center>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-        </div>
-    </center>
         
-<script>
-    
     function message(){
-        swal({
-  title: "Are you sure?",
-  text: "You will not be able to recover this imaginary file!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
-},
-function(){
-  swal("Deleted!", "Your imaginary file has been deleted.", "success");
-});
-    }
+//        
+//        var html = 
+//            '\
+//                <b><checkbox class="medium awesome magenta" type="button" value="Header" style="width:100%">Header</button></b>\
+//                <b><button class="medium awesome red"     type="button" style="width:100%">Text</button></b>\
+//                <b><button class="medium awesome orange"  type="button" style="width:100%">Bar Graph</button></b>\
+//                <b><button class="medium awesome yellow"  type="button" style="width:100%">Line Graph</button></b>\
+//                <b><button class="medium awesome green"   type="button" style="width:100%">Pie Chart</button></b>\
+//                <b><button class="medium awesome blue"    type="button" style="width:100%">Polar Graph</button></b>\
+//            ';
+//        
+//        swal({
+//              html: true,
+//              title:'Select a Widget',
+//              text: html
+//        }
+//      );
+//    
+}
+        
+
 
 </script>
         
-<form onsubmit="return message();">
-    <center><button class="large awesome blue" type="submit" style="width:105%">Add Widget</button></center>
-        </form>
+    <form action = "#modal">
+        <center><button class="large awesome blue" type="submit" style="width:105%" >Add Widget</button></center>
+    </form>
+    
     </div>
-
     
     </td></tr></table>
 
     </body>
     
 </html>
+
+
+
+
+<!-- ADD WIDGET MODAL-->
+<head>
+  <meta charset="utf-8">
+  <title>Remodal</title>
+  <meta name="description" content="Remodal example">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Remodal/src/jquery.remodal.css">
+</head>
+<body>
+    
+    
+<div class="remodal-bg">
+  <br><br>  
+</div>
+
+<div class="remodal" data-remodal-id="modal">
+  <h1>Add Widget</h1>
+  <p>
+
+    <b><button class="medium awesome magenta" type="button" value="Header" style="width:100%">Header</button></b></p>
+    <b><button class="medium awesome red"     type="button" style="width:100%">Text</button></b></p>
+    <b><button class="medium awesome orange"  type="button" style="width:100%">Bar Graph</button></b></p>
+    <b><button class="medium awesome yellow"  type="button" style="width:100%">Line Graph</button></b></p>
+    <b><button class="medium awesome green"   type="button" style="width:100%">Pie Chart</button></b></p>
+    <b><button class="medium awesome blue"    type="button" style="width:100%">Polar Graph</button></b></p>
+
+  </p>
+<!--
+
+  <br>
+  <a class="remodal-cancel" href="#">Cancel</a>
+  <a class="remodal-confirm" href="#">OK</a>
+-->
+</div>
+
+<div data-remodal-id="modal2">
+  <h1>Another one window</h1>
+  <p>
+    Hello!
+  </p>
+  <br>
+  <a class="remodal-confirm" href="#">Hello!</a>
+</div>
+
+<!-- You can define the global options -->
+<script>
+  // window.remodalGlobals = {
+  //   namespace: "remodal",
+  //   defaults: {
+  //     hashTracking: true,
+  //     closeOnConfirm: true,
+  //     closeOnCancel: true,
+  //     closeOnEscape: true,
+  //     closeOnAnyClick: true
+  //   }
+  // };
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="Remodal/libs/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="Remodal/src/jquery.remodal.js"></script>
+
+<!-- Events -->
+<script>
+  $(document).on("open", ".remodal", function () {
+    console.log("open");
+  });
+
+  $(document).on("opened", ".remodal", function () {
+    console.log("opened");
+  });
+
+  $(document).on("close", ".remodal", function (e) {
+    console.log('close' + (e.reason ? ", reason: " + e.reason : ''));
+  });
+
+  $(document).on("closed", ".remodal", function (e) {
+    console.log('closed' + (e.reason ? ', reason: ' + e.reason : ''));
+  });
+
+  $(document).on("confirm", ".remodal", function () {
+    console.log("confirm");
+  });
+
+  $(document).on("cancel", ".remodal", function () {
+    console.log("cancel");
+  });
+
+//  You can open or close it like this:
+//  $(function () {
+//    var inst = $.remodal.lookup[$("[data-remodal-id=modal]"").data("remodal")];
+//    inst.open();
+//    inst.close();
+//  });
+
+  //  Or init in this way:
+  var inst = $("[data-remodal-id=modal2]").remodal();
+  //  inst.open();
+</script>
+</body>
+
+
+
+
+
