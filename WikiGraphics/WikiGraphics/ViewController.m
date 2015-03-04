@@ -58,13 +58,15 @@ CGRect screenBound;
     webview.scrollView.scrollEnabled = NO;
     webview.scrollView.bounces = NO;
     webview.dataDetectorTypes = UIDataDetectorTypeNone;
-    NSString *url=@"https://simpleanswr-henrymound.c9.io/Chart.js-master/samples/doughnut.html";
-    [webview stringByEvaluatingJavaScriptFromString:@"document.body.style.webkitTouchCallout='none'; document.body.style.KhtmlUserSelect='none'"];
-    NSURL *nsurl=[NSURL URLWithString:url];
+    NSURL *nsurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"charts/samples/bar" ofType:@"html"] isDirectory:NO];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+    
     [webview loadRequest:nsrequest];
     [self.view addSubview:webview];
     
+    NSString *message = [NSString stringWithFormat:@"Added graph from %@",
+                         [nsurl path]];
+    NSLog(@"%@", message);
 
 
 }

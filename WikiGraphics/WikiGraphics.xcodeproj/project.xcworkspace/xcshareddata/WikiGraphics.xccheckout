@@ -12,22 +12,34 @@
 	<dict>
 		<key>B4A66A53C41259739ACD495ED89ED1A08DF589B6</key>
 		<string>https://github.com/henrymound/SimpleAnswr.git</string>
+		<key>EDF5FAC7F1CF1A4392F081D19B0DE376212D60B6</key>
+		<string>https://github.com/henrymound/iPhone-Grapher.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>WikiGraphics/WikiGraphics.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B4A66A53C41259739ACD495ED89ED1A08DF589B6</key>
+		<string>../../../../SimpleAnswr</string>
+		<key>EDF5FAC7F1CF1A4392F081D19B0DE376212D60B6</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/henrymound/SimpleAnswr.git</string>
+	<string>https://github.com/henrymound/iPhone-Grapher.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B4A66A53C41259739ACD495ED89ED1A08DF589B6</string>
+	<string>EDF5FAC7F1CF1A4392F081D19B0DE376212D60B6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EDF5FAC7F1CF1A4392F081D19B0DE376212D60B6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iPhone-Grapher</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
