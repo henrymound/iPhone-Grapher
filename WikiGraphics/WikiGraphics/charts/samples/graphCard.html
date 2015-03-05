@@ -121,17 +121,18 @@
 
     
     <body bgcolor="#333" >
-    <table width="320px" height="640px"><tr><td>
+    <table width="320px"><tr><td>
         
-    <div id="widget1">
+    <div id="widgets">
         
     </div>
 
 
     <script>      
-        function addChart(){
+        function addChart(type){
             window.location.href = "#";
-            document.getElementById("widget1").innerHTML = "<iframe src=\"pie.html\">";
+            document.getElementById("widgets").innerHTML += "<center><div class=\"card\"> <center> <table width=\"100%\" border = \"0px\"> <tr> <td> <center><iframe  src=\""+type+".html\" frameborder=\"0\" scrolling=\"no\" width=\"350px\" height=\"350px\" ></iframe></center> </td> </tr> </table> </center>";
+            
         }
     </script>
         
@@ -169,12 +170,12 @@
   <h1>Add Widget</h1>
   <p>
 
-    <b><button class="medium awesome magenta" type="button" style="width:100%" onclick="addChart()">Header</button></b></p>
+    <b><button class="medium awesome magenta" type="button" style="width:100%">Header</button></b></p>
     <b><button class="medium awesome red"     type="button" style="width:100%">Text</button></b></p>
-    <b><button class="medium awesome orange"  type="button" style="width:100%">Bar Graph</button></b></p>
-    <b><button class="medium awesome yellow"  type="button" style="width:100%">Line Graph</button></b></p>
-    <b><button class="medium awesome green"   type="button" style="width:100%">Pie Chart</button></b></p>
-    <b><button class="medium awesome blue"    type="button" style="width:100%">Polar Graph</button></b></p>
+    <b><button class="medium awesome orange"  type="button" style="width:100%" onclick="addChart(&quot;bar&quot;)">Bar Graph</button></b></p>
+    <b><button class="medium awesome yellow"  type="button" style="width:100%" onclick="addChart(&quot;line&quot;)">Line Graph</button></b></p>
+    <b><button class="medium awesome green"   type="button" style="width:100%" onclick="addChart(&quot;pie&quot;)">Pie Chart</button></b></p>
+    <b><button class="medium awesome blue"    type="button" style="width:100%" onclick="addChart(&quot;polar-area&quot;)">Polar Graph</button></b></p>
 
   </p>
 <!--
