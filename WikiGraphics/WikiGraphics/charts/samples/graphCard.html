@@ -123,36 +123,17 @@
     <body bgcolor="#333" >
     <table width="320px" height="640px"><tr><td>
         
- 
-
-
-    <script>
-
+    <div id="widget1">
         
-    function message(){
-//        
-//        var html = 
-//            '\
-//                <b><checkbox class="medium awesome magenta" type="button" value="Header" style="width:100%">Header</button></b>\
-//                <b><button class="medium awesome red"     type="button" style="width:100%">Text</button></b>\
-//                <b><button class="medium awesome orange"  type="button" style="width:100%">Bar Graph</button></b>\
-//                <b><button class="medium awesome yellow"  type="button" style="width:100%">Line Graph</button></b>\
-//                <b><button class="medium awesome green"   type="button" style="width:100%">Pie Chart</button></b>\
-//                <b><button class="medium awesome blue"    type="button" style="width:100%">Polar Graph</button></b>\
-//            ';
-//        
-//        swal({
-//              html: true,
-//              title:'Select a Widget',
-//              text: html
-//        }
-//      );
-//    
-}
-        
+    </div>
 
 
-</script>
+    <script>      
+        function addChart(){
+            window.location.href = "#";
+            document.getElementById("widget1").innerHTML = "<iframe src=\"pie.html\">";
+        }
+    </script>
         
     <form action = "#modal">
         <center><button class="large awesome blue" type="submit" style="width:105%" >Add Widget</button></center>
@@ -172,7 +153,7 @@
 <!-- ADD WIDGET MODAL-->
 <head>
   <meta charset="utf-8">
-  <title>Remodal</title>
+  <title>Chart Test</title>
   <meta name="description" content="Remodal example">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="Remodal/src/jquery.remodal.css">
@@ -188,7 +169,7 @@
   <h1>Add Widget</h1>
   <p>
 
-    <b><button class="medium awesome magenta" type="button" value="Header" style="width:100%">Header</button></b></p>
+    <b><button class="medium awesome magenta" type="button" style="width:100%" onclick="addChart()">Header</button></b></p>
     <b><button class="medium awesome red"     type="button" style="width:100%">Text</button></b></p>
     <b><button class="medium awesome orange"  type="button" style="width:100%">Bar Graph</button></b></p>
     <b><button class="medium awesome yellow"  type="button" style="width:100%">Line Graph</button></b></p>
