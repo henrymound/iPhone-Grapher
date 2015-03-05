@@ -103,7 +103,7 @@
     position: relative;
     text-decoration: none;
     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-    width: 100%;
+    width: 90%;
     }
         
     #lean_overlay {
@@ -121,7 +121,7 @@
 
     
     <body bgcolor="#333" >
-    <table width="90%"><tr><td>
+    <center><table width="100%"><tr><td>
         
     <div id="widgets">
         
@@ -131,18 +131,18 @@
     <script>      
         function addChart(type){
             window.location.href = "#";
-            document.getElementById("widgets").innerHTML += "<center><div class=\"card\"> <center> <table width=\"100%\" border = \"0px\"> <tr> <td> <center><iframe  src=\""+type+".html\" frameborder=\"0\" scrolling=\"no\" width=\"100%\" height=\"275px\" ></iframe></center> </td> </tr> </table> </center>";
+            document.getElementById("widgets").innerHTML += "<center><div class=\"card\"> <center> <table style=\"width:100%\" border = \"0px\"> <tr> <td> <center><iframe  src=\""+type+".html\" frameborder=\"0\" scrolling=\"no\ \"style=\"width:100%\" height=\"275px\" ></iframe></center> </td> </tr> </table> </center>";
             
         }
     </script>
         
     <form action = "#modal">
-        <center><button class="large awesome blue" type="submit" style="width:100%" >Add Widget</button></center>
+        <center><button class="large awesome blue" type="submit" style="width:95%" >Add Widget</button></center>
     </form>
     
     </div>
     
-    </td></tr></table>
+    </td></tr></table></center>
 
     </body>
     

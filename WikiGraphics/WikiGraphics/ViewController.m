@@ -40,24 +40,11 @@ CGRect screenBound;
 }
 
 - (IBAction)NewGraphButton:(id)sender {
-    [_NewGraphButton removeFromSuperview];
+   
+    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 20, screenBound.size.width, screenBound.size.height)];
     
-    _AddWidget = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _AddWidget.frame = CGRectMake(_NewGraphButton.frame.origin.x, _NewGraphButton.frame.origin.y - 200, 100, 50.0);
-    [_AddWidget addTarget:self action:@selector(AddWidget:)
-              forControlEvents:UIControlEventTouchUpInside];
-    [_AddWidget setTitle:@"Add Widget" forState:UIControlStateNormal];
-    [self.view addSubview:_AddWidget];
-    
-}
-
-
-- (IBAction)AddWidget:(id)sender{
-    
-    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 10, screenBound.size.width, screenBound.size.height)];
-
-    webview.scrollView.scrollEnabled = NO;
     webview.scrollView.bounces = NO;
+    webview.scrollView.scrollEnabled = TRUE;
     webview.dataDetectorTypes = UIDataDetectorTypeNone;
     NSURL *nsurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"charts/samples/graphCard" ofType:@"html"] isDirectory:NO];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
@@ -68,9 +55,10 @@ CGRect screenBound;
     NSString *message = [NSString stringWithFormat:@"Added graph from %@",
                          [nsurl path]];
     NSLog(@"%@", message);
-
-
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
