@@ -54,12 +54,12 @@ CGRect screenBound;
 
 - (IBAction)AddWidget:(id)sender{
     
-    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 100, screenBound.size.width, screenBound.size.width)];
+    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 10, screenBound.size.width, screenBound.size.height)];
 
     webview.scrollView.scrollEnabled = NO;
     webview.scrollView.bounces = NO;
     webview.dataDetectorTypes = UIDataDetectorTypeNone;
-    NSURL *nsurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"charts/samples/line" ofType:@"html"] isDirectory:NO];
+    NSURL *nsurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"charts/samples/graphCard" ofType:@"html"] isDirectory:NO];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
     
     [webview loadRequest:nsrequest];
