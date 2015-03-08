@@ -37,6 +37,11 @@ CGRect screenBound;
     _TitleBar.frame = CGRectMake(0, 0, screenBound.size.width, 100);
     //Add elements to screen
     [self.view addSubview:_NewGraphButton];
+    while (self.view.gestureRecognizers.count) {
+        [self.view removeGestureRecognizer:[self.view.gestureRecognizers objectAtIndex:0]];
+    }
+    
+    
 }
 
 - (IBAction)NewGraphButton:(id)sender {
@@ -48,21 +53,38 @@ CGRect screenBound;
     webview.dataDetectorTypes = UIDataDetectorTypeNone;
     NSURL *nsurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"charts/samples/graphCard" ofType:@"html"] isDirectory:NO];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
-    
+    NSString * jsCallBack = @"window.getSelection().removeAllRanges();document.documentElement.style.webkitUserSelect='none';document.body.style.setProperty(\"-webkit-tap-highlight-color\", \"rgba(0,0,0,0)\");";//Disables user selection
+    [webview stringByEvaluatingJavaScriptFromString:jsCallBack];
     [webview loadRequest:nsrequest];
+
+  //  [webview stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
+
     [self.view addSubview:webview];
     
     NSString *message = [NSString stringWithFormat:@"Added graph from %@",
                          [nsurl path]];
     NSLog(@"%@", message);
-    
+
 }
 
+//Disables copy and paste in UIWebView
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (action == @selector(copy:) ||
+        action == @selector(paste:)||
+        action == @selector(cut:))
+    {
+        return false;
+    }
+    return [super canPerformAction:action withSender:sender];
 }
 
 @end
