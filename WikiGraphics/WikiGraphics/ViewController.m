@@ -48,6 +48,7 @@ CGRect screenBound;
    
     UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 20, screenBound.size.width, screenBound.size.height)];
     
+<<<<<<< Updated upstream
     webview.scrollView.bounces = NO;
     webview.scrollView.scrollEnabled = TRUE;
     webview.dataDetectorTypes = UIDataDetectorTypeNone;
@@ -60,10 +61,33 @@ CGRect screenBound;
   //  [webview stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
 
     [self.view addSubview:webview];
+=======
+    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 100, screenBound.size.width, screenBound.size.width)];
+//
+//    webview.scrollView.scrollEnabled = NO;
+//    webview.scrollView.bounces = NO;
+//    webview.dataDetectorTypes = UIDataDetectorTypeNone;
+//    NSURL *nsurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"charts/samples/line" ofType:@"html"] isDirectory:NO];
+//    NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+//    
+//    [webview loadRequest:nsrequest];
+//    [self.view addSubview:webview];
+//    
+//    NSString *message = [NSString stringWithFormat:@"Added graph from %@",
+//                         [nsurl path]];
+//    NSLog(@"%@", message);
     
-    NSString *message = [NSString stringWithFormat:@"Added graph from %@",
-                         [nsurl path]];
-    NSLog(@"%@", message);
+
+    
+    NSString* url = @"http://infobeautiful3.s3.amazonaws.com/2014/11/1276_Codebases.png";
+    
+    NSURL* nsUrl = [NSURL URLWithString:url];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:nsUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
+    
+    [webview loadRequest:request];
+>>>>>>> Stashed changes
+    
 
 }
 
